@@ -24,7 +24,253 @@
 </head>
 
 <body>
+    <!-- header -->
+    <header>
+        <div class="navbar container mx-auto ">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <button class="btn btn-ghost home-btn"><a>Home</a></button>
+                        <button class="btn btn-ghost products-btn"><a>Products</a></button>
+                        <button id="about" class="btn btn-ghost"><a>About</a></button>
+                        <button id="contact" class="btn btn-ghost"><a>Contact</a></button>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-primary text-xl">SwiftCart</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <button class="btn btn-ghost home-btn"><a class="text-primary">Home</a></button>
+                    <button class="btn btn-ghost products-btn"><a>Products</a></button>
+                    <button id="about" class="btn btn-ghost"><a>About</a></button>
+                    <button id="contact" class="btn btn-ghost"><a>Contact</a></button>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            </div>
+        </div>
+    </header>
+    <!-- Home Page -->
+    <div id="homePage">
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center h-[500px]"
+            style="background-image: url('./Assets/banner-image.png');">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div
+                class="relative container mx-auto h-full flex flex-col justify-center items-start px-4 sm:px-12 text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Best Collection For You</h1>
+                <p class="text-lg mb-6 max-w-lg">Discover the latest trends in fashion, electronics, and more. Shop with
+                    confidence and style at SwiftCart.</p>
+                <button
+                    class="btn btn-primary px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition duration-300 border-none bg-[#6366f1] hover:bg-[#4f46e5]">Shop
+                    Now</button>
+            </div>
+        </section>
+        <!-- Why Choose Us Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Why Choose Us</h2>
+                    <p class="text-gray-600">We provide the best shopping experience with top-notch services.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md text-left">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid text-primary fa-truck-fast text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Fast Delivery</h3>
+                        <p class="text-gray-500 text-sm">Get your orders delivered to your doorstep quickly and
+                            efficiently.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md text-left">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid text-primary fa-headset text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">24/7 Support</h3>
+                        <p class="text-gray-500 text-sm">Our support team is available around the clock to assist you.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md text-left">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid text-primary fa-shield-halved text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Secure Payment</h3>
+                        <p class="text-gray-500 text-sm">Experience safe and secure transactions with our encrypted
+                            payment
+                            systems.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md text-left">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid text-primary fa-rotate-left text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Easy Returns</h3>
+                        <p class="text-gray-500 text-sm">Not satisfied? Return your products easily within 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trending Now Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-left">Trending Now</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product 1: Backpack -->
+                    <div class="card bg-base-100 shadow-sm hover:shadow-md border border-gray-100">
+                        <figure class="px-4 pt-4 bg-[#F3F4F6] h-64 flex items-center justify-center">
+                            <img src="./Assets/backpack.jpg" alt="Fjallraven - Foldsack No. 1 Backpack"
+                                class="object-contain h-full w-full mix-blend-multiply" />
+                        </figure>
+                        <div class="card-body p-4 text-left">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="badge badge-ghost text-xs font-medium text-blue-600 bg-blue-50 border-none px-2 py-1">Men's
+                                    Clothing</span>
+                                <div class="flex items-center gap-1 text-xs text-gray-500">
+                                    <i class="fa-solid fa-star text-yellow-400"></i>
+                                    <span>3.9 (120)</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-base font-bold mb-1">Fjallraven - Foldsack No. 1 Backpack, Fits
+                                15
+                                Laptops</h3>
+                            <p class="text-xl font-bold text-gray-800 mb-4">$109.95</p>
+                            <div class="card-actions justify-between items-center grid grid-cols-2 gap-3">
+                                <button
+                                    class="btn btn-outline btn-sm w-full border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-800 hover:border-gray-400 font-normal"><i
+                                        class="fa-regular fa-eye"></i> Details</button>
+                                <button
+                                    class="btn btn-primary btn-sm w-full bg-[#6366f1] hover:bg-[#4f46e5] border-none text-white font-normal"><i
+                                        class="fa-solid fa-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Product 2: T-Shirt -->
+                    <div class="card bg-base-100 shadow-sm hover:shadow-md border border-gray-100">
+                        <figure class="px-4 pt-4 bg-[#F3F4F6] h-64 flex items-center justify-center">
+                            <img src="./Assets/tshirt.jpg" alt="Mens Casual Premium Slim Fit T-Shirts"
+                                class="object-contain h-full w-full mix-blend-multiply" />
+                        </figure>
+                        <div class="card-body p-4 text-left">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="badge badge-ghost text-xs font-medium text-blue-600 bg-blue-50 border-none px-2 py-1">Men's
+                                    Clothing</span>
+                                <div class="flex items-center gap-1 text-xs text-gray-500">
+                                    <i class="fa-solid fa-star text-yellow-400"></i>
+                                    <span>4.1 (259)</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-base font-bold mb-1">Mens Casual Premium Slim Fit T-Shirts</h3>
+                            <p class="text-xl font-bold text-gray-800 mb-4">$22.3</p>
+                            <div class="card-actions justify-between items-center grid grid-cols-2 gap-3">
+                                <button
+                                    class="btn btn-outline btn-sm w-full border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-800 hover:border-gray-400 font-normal"><i
+                                        class="fa-regular fa-eye"></i> Details</button>
+                                <button
+                                    class="btn btn-primary btn-sm w-full bg-[#6366f1] hover:bg-[#4f46e5] border-none text-white font-normal"><i
+                                        class="fa-solid fa-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: Jacket -->
+                    <div class="card bg-base-100 shadow-sm hover:shadow-md border border-gray-100">
+                        <figure class="px-4 pt-4 bg-[#F3F4F6] h-64 flex items-center justify-center">
+                            <img src="./Assets/jackets.jpg" alt="Mens Cotton Jacket"
+                                class="object-contain h-full w-full mix-blend-multiply" />
+                        </figure>
+                        <div class="card-body p-4 text-left">
+                            <div class="flex justify-between items-center mb-2">
+                                <span
+                                    class="badge badge-ghost text-xs font-medium text-blue-600 bg-blue-50 border-none px-2 py-1">Men's
+                                    Clothing</span>
+                                <div class="flex items-center gap-1 text-xs text-gray-500">
+                                    <i class="fa-solid fa-star text-yellow-400"></i>
+                                    <span>4.7 (500)</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-base font-bold mb-1">Mens Cotton Jacket</h3>
+                            <p class="text-xl font-bold text-gray-800 mb-4">$55.99</p>
+                            <div class="card-actions justify-between items-center grid grid-cols-2 gap-3">
+                                <button
+                                    class="btn btn-outline btn-sm w-full border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-800 hover:border-gray-400 font-normal"><i
+                                        class="fa-regular fa-eye"></i> Details</button>
+                                <button
+                                    class="btn btn-primary btn-sm w-full bg-[#6366f1] hover:bg-[#4f46e5] border-none text-white font-normal"><i
+                                        class="fa-solid fa-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Product Page -->
+    <section id="productPage" class="hidden py-16 min-h-screen">
+        <div class="container mx-auto px-4">
+
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-[#1f2937] text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="text-left">
+                <h3 class="text-xl font-bold mb-4 text-[#6366f1]">SwiftCart</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Your one-stop shop for all your fashion and lifestyle
+                    needs. Quality products, fast delivery, and excellent support.</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="text-left">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Products</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                </ul>
+            </div>
+            <!-- Support -->
+            <div class="text-left">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Support</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">FAQ</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Shipping</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Returns</a></li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div class="text-left">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Subscribe to our Newsletter
+                </h3>
+                <p class="text-gray-400 text-sm mb-4">The latest news, articles, and resources, sent to your inbox
+                    weekly.</p>
+                <div class="flex flex-col gap-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="input input-sm input-bordered w-full text-gray-800 bg-white focus:outline-none focus:border-[#6366f1]" />
+                    <button
+                        class="btn btn-sm btn-primary bg-[#6366f1] hover:bg-[#4f46e5] border-none text-white w-full sm:w-auto">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./script/index.js"></script>
 </body>
 
 </html>
