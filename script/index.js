@@ -72,7 +72,7 @@ displayProducts = (data) => {
                             <h3 class="card-title text-base font-bold mb-1">${product.title}</h3>
                             <p class="text-xl font-bold text-gray-800 mb-4">${product.price}</p>
                             <div class="card-actions justify-between items-center grid grid-cols-2 gap-3">
-                                <button
+                                <button onclick="loadProductDetails(${product.id})"
                                     class="btn btn-outline btn-sm w-full border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-800 hover:border-gray-400 font-normal"><i
                                         class="fa-regular fa-eye"></i> Details</button>
                                 <button
@@ -85,7 +85,51 @@ displayProducts = (data) => {
         productContainer.appendChild(productCard);
     });
 }
-//Category Click → Product Data On clicking a category: load products of that specific category.
+//using modal 
+//https://fakestoreapi.com/products/{id}
+// Modal on "Details" Click Clicking the "Details" button on a card opens a modal with full product details:
+//Full Title
+//Full Description
+//Price & Rating
+//"Buy Now" or "Add to Cart" button in modal.
+const loadProductDetails = async (id) => {
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    const data = await res.json();
+    displayProductDetails(data);
+}
+const displayProductDetails = (data) => {
+    const productDetails = document.getElementById("product_detail");
+    productDetails.innerHTML = `
+    <div class="card bg-base-100 shadow-sm hover:shadow-md border border-gray-100">
+        <figure class="px-4 pt-4 bg-[#F3F4F6] h-64 flex items-center justify-center">
+            <img src="${data.image}" alt="${data.title}"
+                class="object-contain h-full w-full mix-blend-multiply" />
+        </figure>
+        <div class="card-body p-4 text-left">
+            <div class="flex justify-between items-center mb-2">
+                <span class="badge badge-ghost text-xs font-medium text-blue-600 bg-blue-50 border-none px-2 py-1">${data.category}</span>
+                <div class="flex items-center gap-1 text-xs text-gray-500">
+                    <i class="fa-solid fa-star text-yellow-400"></i>
+                    <span>${data.rating.rate} (${data.rating.count})</span>
+                </div>
+            </div>
+            <h3 class="card-title text-base font-bold mb-1">${data.title}</h3>
+            <p class="text-sm text-gray-500 mb-2">${data.description}</p>
+            <p class="text-xl font-bold text-gray-800 mb-4">$${data.price}</p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary btn-sm bg-[#6366f1] hover:bg-[#4f46e5] border-none text-white font-normal"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+    `;
+    document.getElementById("my_modal_5").showModal();
+}
 
 
 loadAllProducts();
