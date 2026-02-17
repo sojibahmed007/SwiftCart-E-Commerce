@@ -47,7 +47,7 @@ const loadAllProducts = async () => {
     const data = await res.json();
     displayProducts(data);
 }
-displayProducts = (data) => {
+const displayProducts = (data) => {
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -87,11 +87,7 @@ displayProducts = (data) => {
 }
 //using modal 
 //https://fakestoreapi.com/products/{id}
-// Modal on "Details" Click Clicking the "Details" button on a card opens a modal with full product details:
-//Full Title
-//Full Description
-//Price & Rating
-//"Buy Now" or "Add to Cart" button in modal.
+
 const loadProductDetails = async (id) => {
     const res = await fetch(`https://fakestoreapi.com/products/${id}`);
     const data = await res.json();
