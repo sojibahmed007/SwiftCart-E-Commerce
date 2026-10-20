@@ -41,7 +41,7 @@ A modern, responsive, and feature-rich E-Commerce web application built with **H
 - **Markup**: HTML5 (Semantic elements, `<dialog>`, `<details>`, `<summary>`)
 - **Styling**: [Tailwind CSS 3](https://tailwindcss.com/) & [DaisyUI 4](https://daisyui.com/)
 - **Icons**: [Font Awesome 6](https://fontawesome.com/)
-- **Typography**: [Google Fonts (Plus Jakarta Sans & Poppins)](https://fonts.google.com/)
+- **Typography**: [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins)
 - **Scripting**: Vanilla JavaScript (ES6+, Async/Await, Fetch API, LocalStorage)
 - **API Source**: [FakeStoreAPI](https://fakestoreapi.com/)
 
